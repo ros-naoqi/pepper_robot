@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <name>pepper_sensors</name>
+  <version>0.0.2</version>
+  <description>The pepper_sensors package</description>
+
+  <maintainer email="kknese@aldebaran.com">Karsten Knese</maintainer>
+
+  <license>Apache 2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>naoqi_sensors</build_depend>
+  <build_depend>rospy</build_depend>
+  <run_depend>naoqi_sensors</run_depend>
+  <run_depend>rospy</run_depend>
+
+</package>

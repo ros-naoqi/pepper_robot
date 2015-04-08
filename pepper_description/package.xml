@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package>
+  <name>pepper_description</name>
+  <version>0.1.0</version>
+  <description>The pepper_description package</description>
+
+  <maintainer email="kknese@aldebaran.com">Karsten Knese</maintainer>
+
+  <license>Apache 2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>

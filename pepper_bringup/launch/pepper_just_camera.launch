@@ -1,0 +1,16 @@
+<launch>
+  <arg name="frame_rate" default="10" />
+
+  <include file="$(find pepper_sensors)/launch/camera.launch" ns="camera/depth" >
+    <arg name="source" value="2" />
+    <arg name="color_space" value="17" />
+    <arg name="resolution" value="1" />
+    <arg name="frame_rate" value="$(arg frame_rate)" />
+  </include>
+  <include file="$(find pepper_sensors)/launch/camera.launch" ns="camera/front" >
+    <arg name="source" value="0" />
+    <arg name="color_space" value="13" />
+    <arg name="frame_rate" value="$(arg frame_rate)" />
+  </include>
+
+</launch>
