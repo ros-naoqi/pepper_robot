@@ -8,6 +8,10 @@
 
   <license>Apache 2.0</license>
 
+  <run_depend>naoqi_driver</run_depend>
+  <run_depend>pepper_description</run_depend>
+  <run_depend>pepper_sensors</run_depend>
+
   <buildtool_depend>catkin</buildtool_depend>
 
 </package>

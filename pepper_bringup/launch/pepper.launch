@@ -10,7 +10,6 @@
 
   <include file="$(find pepper_sensors)/launch/sonar.launch" />
   <include file="$(find pepper_sensors)/launch/laser.launch" />
-  <include file="$(find pepper_navigation)/launch/navigation.launch" />
   <include file="$(find pepper_sensors)/launch/camera.launch" ns="camera/depth" >
     <arg name="source" value="2" />
     <arg name="color_space" value="17" />
