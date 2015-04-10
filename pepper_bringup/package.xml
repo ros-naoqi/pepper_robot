@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>pepper_bringup</name>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
   <description>The pepper_bringup package</description>
 
   <maintainer email="kknese@aldebaran.com">Karsten Knese</maintainer>
