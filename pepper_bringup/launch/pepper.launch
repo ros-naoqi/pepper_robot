@@ -15,8 +15,12 @@
     <arg name="color_space" value="17" />
     <arg name="resolution" value="1" />
   </include>
-  <include file="$(find pepper_sensors)/launch/camera.launch" ns="camera/front" >
+  <include file="$(find pepper_sensors)/launch/camera.launch" ns="camera/top" >
     <arg name="source" value="0" />
+    <arg name="color_space" value="13" />
+  </include>
+  <include file="$(find pepper_sensors)/launch/camera.launch" ns="camera/bottom" >
+    <arg name="source" value="1" />
     <arg name="color_space" value="13" />
   </include>
 
