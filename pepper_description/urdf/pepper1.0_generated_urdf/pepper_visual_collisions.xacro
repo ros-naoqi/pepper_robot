@@ -101,30 +101,16 @@
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
 	</xacro:macro>
-	<xacro:macro name="xacro:insert_visu_WheelFL_link">
+	<xacro:macro name="xacro:insert_visu_RFinger31_link">
 		<visual>
 			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/WheelFL.dae" scale="0.1 0.1 0.1"/>
+				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger31.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/WheelFL_0.10.stl" scale="0.1 0.1 0.1"/>
-			</geometry>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
-		</collision>
-	</xacro:macro>
-	<xacro:macro name="xacro:insert_visu_RFinger32_link">
-		<visual>
-			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger32.dae" scale="0.1 0.1 0.1"/>
-			</geometry>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
-		</visual>
-		<collision>
-			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger32_0.10.stl" scale="0.1 0.1 0.1"/>
+				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger31_0.10.stl" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
@@ -143,16 +129,16 @@
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
 	</xacro:macro>
-	<xacro:macro name="xacro:insert_visu_RFinger43_link">
+	<xacro:macro name="xacro:insert_visu_RFinger32_link">
 		<visual>
 			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger43.dae" scale="0.1 0.1 0.1"/>
+				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger32.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger43_0.10.stl" scale="0.1 0.1 0.1"/>
+				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger32_0.10.stl" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
@@ -213,20 +199,6 @@
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
 	</xacro:macro>
-	<xacro:macro name="xacro:insert_visu_WheelB_link">
-		<visual>
-			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/WheelB.dae" scale="0.1 0.1 0.1"/>
-			</geometry>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
-		</visual>
-		<collision>
-			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/WheelB_0.10.stl" scale="0.1 0.1 0.1"/>
-			</geometry>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
-		</collision>
-	</xacro:macro>
 	<xacro:macro name="xacro:insert_visu_RFinger22_link">
 		<visual>
 			<geometry>
@@ -241,16 +213,16 @@
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
 	</xacro:macro>
-	<xacro:macro name="xacro:insert_visu_LFinger41_link">
+	<xacro:macro name="xacro:insert_visu_RThumb2_link">
 		<visual>
 			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/LFinger41.dae" scale="0.1 0.1 0.1"/>
+				<mesh filename="package://pepper_meshes/meshes/1.0/RThumb2.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/LFinger41_0.10.stl" scale="0.1 0.1 0.1"/>
+				<mesh filename="package://pepper_meshes/meshes/1.0/RThumb2_0.10.stl" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
@@ -353,16 +325,16 @@
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
 	</xacro:macro>
-	<xacro:macro name="xacro:insert_visu_RThumb2_link">
+	<xacro:macro name="xacro:insert_visu_LFinger41_link">
 		<visual>
 			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/RThumb2.dae" scale="0.1 0.1 0.1"/>
+				<mesh filename="package://pepper_meshes/meshes/1.0/LFinger41.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/RThumb2_0.10.stl" scale="0.1 0.1 0.1"/>
+				<mesh filename="package://pepper_meshes/meshes/1.0/LFinger41_0.10.stl" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
@@ -479,6 +451,20 @@
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
 	</xacro:macro>
+	<xacro:macro name="xacro:insert_visu_WheelB_link">
+		<visual>
+			<geometry>
+				<mesh filename="package://pepper_meshes/meshes/1.0/WheelB.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://pepper_meshes/meshes/1.0/WheelB_0.10.stl" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</collision>
+	</xacro:macro>
 	<xacro:macro name="xacro:insert_visu_LFinger23_link">
 		<visual>
 			<geometry>
@@ -531,6 +517,20 @@
 		<collision>
 			<geometry>
 				<mesh filename="package://pepper_meshes/meshes/1.0/LFinger43_0.10.stl" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</collision>
+	</xacro:macro>
+	<xacro:macro name="xacro:insert_visu_RFinger43_link">
+		<visual>
+			<geometry>
+				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger43.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger43_0.10.stl" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
@@ -605,16 +605,16 @@
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
 	</xacro:macro>
-	<xacro:macro name="xacro:insert_visu_RFinger31_link">
+	<xacro:macro name="xacro:insert_visu_WheelFL_link">
 		<visual>
 			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger31.dae" scale="0.1 0.1 0.1"/>
+				<mesh filename="package://pepper_meshes/meshes/1.0/WheelFL.dae" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger31_0.10.stl" scale="0.1 0.1 0.1"/>
+				<mesh filename="package://pepper_meshes/meshes/1.0/WheelFL_0.10.stl" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
