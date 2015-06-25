@@ -2,8 +2,8 @@
 Changelog for package pepper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.3 (2015-06-25)
+------------------
 * generate a new .urdf file from the .xacro files
 * update to the latest alrobotmodelutils
 * Contributors: Vincent Rabaud
