@@ -7,7 +7,7 @@
   <include file="$(find naoqi_driver)/launch/naoqi_driver.launch">
     <arg name="force_python" value="$(arg force_python)" />
   </include>
-  <include file="$(find nao_pose)/launch/pose_manager.launch" />
+  <include file="$(find naoqi_pose)/launch/pose_manager.launch" />
   <include file="$(find pepper_sensors)/launch/sonar.launch" />
   <include file="$(find pepper_sensors)/launch/laser.launch" />
   <include file="$(find pepper_sensors)/launch/camera.launch" ns="camera/depth" >
