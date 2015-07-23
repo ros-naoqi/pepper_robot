@@ -1,15 +1,17 @@
-
 <launch>
-  <env name="PYTHONPATH" value="$(env PYTHONPATH)" /> 
+  <arg name="nao_ip"            default="$(optenv NAO_IP 127.0.0.1)" />
+  <env name="PYTHONPATH"        value="$(env PYTHONPATH)" /> 
 
   <!-- Load front and back sonar -->
-  <include file="$(find naoqi_sensors)/launch/sonar.launch" ns="pepper_robot/sonar/front" >
-    <arg name="memory_key" value="Device/SubDeviceList/Platform/Front/Sonar/Sensor/Value" />
-    <arg name="frame_id" value="SonarFront_frame" />
+  <include file="$(find naoqi_sensors_py)/launch/sonar.launch" ns="pepper_robot/sonar/front" >
+    <arg name="nao_ip"          value="$(arg nao_ip)" />
+    <arg name="memory_key"      value="Device/SubDeviceList/Platform/Front/Sonar/Sensor/Value" />
+    <arg name="frame_id"        value="SonarFront_frame" />
   </include>
-  <include file="$(find naoqi_sensors)/launch/sonar.launch" ns="pepper_robot/sonar/back" >
-    <arg name="memory_key" value="Device/SubDeviceList/Platform/Back/Sonar/Sensor/Value" />
-    <arg name="frame_id" value="SonarBack_frame" />
+  <include file="$(find naoqi_sensors_py)/launch/sonar.launch" ns="pepper_robot/sonar/back" >
+    <arg name="nao_ip"          value="$(arg nao_ip)" />
+    <arg name="memory_key"      value="Device/SubDeviceList/Platform/Back/Sonar/Sensor/Value" />
+    <arg name="frame_id"        value="SonarBack_frame" />
   </include>
 
 </launch>

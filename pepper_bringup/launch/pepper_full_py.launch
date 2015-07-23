@@ -1,0 +1,34 @@
+<launch>
+
+  <arg name="nao_ip"            default="$(optenv NAO_IP 127.0.0.1)" />
+  <arg name="nao_port"          default="$(optenv NAO_PORT 9559)" />
+
+
+  <!-- Use CPP node by default for nao_sensors -->
+  <arg name="force_python" default="true" />
+  <include file="$(find pepper_description)/launch/pepper_publisher.launch" />
+
+  <!-- nao driver works for pepper -->
+  <include file="$(find naoqi_driver_py)/launch/naoqi_driver.launch">
+    <arg name="nao_ip"    value="$(arg nao_ip)" />
+  </include>
+
+  <include file="$(find pepper_sensors)/launch/sonar.launch" >
+    <arg name="nao_ip"    value="$(arg nao_ip)" />
+  </include>
+  <include file="$(find pepper_sensors)/launch/laser.launch" >
+    <arg name="nao_ip"    value="$(arg nao_ip)" />
+  </include>
+  <include file="$(find pepper_sensors)/launch/camera.launch" ns="camera/depth" >
+    <arg name="nao_ip"    value="$(arg nao_ip)" />
+    <arg name="source"          value="2" />
+    <arg name="color_space"     value="17" />
+    <arg name="resolution"      value="1" />
+  </include>
+  <include file="$(find pepper_sensors)/launch/camera.launch" ns="camera/front" >
+    <arg name="nao_ip"    value="$(arg nao_ip)" />
+    <arg name="source"          value="0" />
+    <arg name="color_space"     value="13" />
+  </include>
+
+</launch>
