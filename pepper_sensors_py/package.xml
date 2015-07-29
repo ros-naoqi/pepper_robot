@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>pepper_sensors</name>
+  <name>pepper_sensors_py</name>
   <version>0.1.3</version>
   <description>The pepper_sensors package</description>
 
@@ -10,7 +10,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>naoqi_sensors</run_depend>
+  <run_depend>naoqi_sensors_py</run_depend>
   <run_depend>rospy</run_depend>
 
 </package>

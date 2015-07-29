@@ -7,7 +7,7 @@
 
   <arg name="pointcloud" default="True" />
   <arg name="laserscan" default="False" />
-  <node pkg="pepper_sensors" type="laser.py" name="pepper_laser" required="true" args="--pip=$(arg nao_ip) --pport=$(arg nao_port) " output="screen">
+  <node pkg="pepper_sensors_py" type="laser.py" name="pepper_laser" required="true" args="--pip=$(arg nao_ip) --pport=$(arg nao_port) " output="screen">
 
   </node>
 

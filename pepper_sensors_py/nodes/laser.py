@@ -86,12 +86,12 @@ class NaoqiLaser(NaoqiNode):
     PARAM_LASER_SRD_RIGHT_FRAME = '~laser_srd_right_frame_id'
     PARAM_LASER_SRD_RIGHT_FRAME_DEFAULT = 'SurroundingRightLaser_frame'
 
-    TOPIC_LASER_SHOVEL = '~/pepper/laser/shovel/'
-    TOPIC_LASER_GROUND_LEFT = '~/pepper/laser/ground_left/'
-    TOPIC_LASER_GROUND_RIGHT = '~/pepper/laser/ground_right/'
-    TOPIC_LASER_SRD_FRONT = '~/pepper/laser/srd_front/'
-    TOPIC_LASER_SRD_LEFT = '~/pepper/laser/srd_left/'
-    TOPIC_LASER_SRD_RIGHT = '~/pepper/laser/srd_right/'
+    TOPIC_LASER_SHOVEL = '~/laser/shovel/'
+    TOPIC_LASER_GROUND_LEFT = '~/laser/ground_left/'
+    TOPIC_LASER_GROUND_RIGHT = '~/laser/ground_right/'
+    TOPIC_LASER_SRD_FRONT = '~/laser/srd_front/'
+    TOPIC_LASER_SRD_LEFT = '~/laser/srd_left/'
+    TOPIC_LASER_SRD_RIGHT = '~/laser/srd_right/'
 
     PEPPER_LASER_SUB_NAME = 'pepper_ros_laser'
 

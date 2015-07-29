@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(pepper_sensors)
+project(pepper_sensors_py)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)

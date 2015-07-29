@@ -13,19 +13,19 @@
     <arg name="nao_ip"    value="$(arg nao_ip)" />
   </include>
 
-  <include file="$(find pepper_sensors)/launch/sonar.launch" >
+  <include file="$(find pepper_sensors_py)/launch/sonar.launch" >
     <arg name="nao_ip"    value="$(arg nao_ip)" />
   </include>
-  <include file="$(find pepper_sensors)/launch/laser.launch" >
+  <include file="$(find pepper_sensors_py)/launch/laser.launch" >
     <arg name="nao_ip"    value="$(arg nao_ip)" />
   </include>
-  <include file="$(find pepper_sensors)/launch/camera.launch" ns="camera/depth" >
+  <include file="$(find pepper_sensors_py)/launch/camera.launch" ns="pepper_robot/camera/depth" >
     <arg name="nao_ip"    value="$(arg nao_ip)" />
     <arg name="source"          value="2" />
     <arg name="color_space"     value="17" />
     <arg name="resolution"      value="1" />
   </include>
-  <include file="$(find pepper_sensors)/launch/camera.launch" ns="camera/front" >
+  <include file="$(find pepper_sensors_py)/launch/camera.launch" ns="pepper_robot/camera/front" >
     <arg name="nao_ip"    value="$(arg nao_ip)" />
     <arg name="source"          value="0" />
     <arg name="color_space"     value="13" />

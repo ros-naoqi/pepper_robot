@@ -4,13 +4,13 @@
   <arg name="nao_ip" default="$(optenv NAO_IP 127.0.0.1)" />
   <arg name="nao_port" default="$(optenv NAO_PORT 9559)" />
 
-  <arg name="ns" default="camera/front" /> <!-- front camera -->
+  <arg name="ns" default="" /> <!-- front camera -->
   <arg name="source" default="0" /> <!-- front camera -->
   <arg name="color_space" default="13" />
   <arg name="resolution" default="1" />
   <arg name="frame_rate" default="15" />
 
-  <node pkg="pepper_sensors" type="camera.py" name="camera" required="true" args="--pip=$(arg nao_ip) --pport=$(arg nao_port)" output="screen">
+  <node pkg="pepper_sensors_py" type="camera.py" name="camera" required="true" args="--pip=$(arg nao_ip) --pport=$(arg nao_port)" output="screen">
     <param name="calibration_file_bottom" type="string" value="file://$(find naoqi_sensors_py)/share/nao_camera_bottom_640x480.yaml"/>
     <param name="calibration_file_top" type="string" value="file://$(find naoqi_sensors_py)/share/nao_camera_top_640x480.yaml"/>
     <param name="source" value="$(arg source)" />
