@@ -2,8 +2,8 @@
 Changelog for package pepper_sensors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.4 (2015-07-30)
+------------------
 * update maintainer email
 * pepper_sensor to pepper_sensor_py
 * Contributors: Karsten Knese

@@ -2,8 +2,8 @@
 Changelog for package pepper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.4 (2015-07-30)
+------------------
 * use proper macro names
 * Contributors: Vincent Rabaud
 
