@@ -2,6 +2,11 @@
 Changelog for package pepper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* use proper macro names
+* Contributors: Vincent Rabaud
+
 0.1.3 (2015-06-25)
 ------------------
 * generate a new .urdf file from the .xacro files

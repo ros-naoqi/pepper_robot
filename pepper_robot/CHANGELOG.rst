@@ -2,6 +2,11 @@
 Changelog for package pepper_robot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* update maintainer email
+* Contributors: Karsten Knese
+
 0.1.3 (2015-06-25)
 ------------------
 

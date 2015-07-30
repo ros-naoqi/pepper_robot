@@ -2,6 +2,14 @@
 Changelog for package pepper_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* update maintainer email
+* rename naoqi_driver
+* pepper_sensor to pepper_sensor_py
+* transfer to naoqi_py
+* Contributors: Karsten Knese
+
 0.1.3 (2015-06-25)
 ------------------
 
