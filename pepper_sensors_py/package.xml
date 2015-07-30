@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>pepper_sensors_py</name>
-  <version>0.1.3</version>
+  <version>0.1.4</version>
   <description>The pepper_sensors package</description>
 
   <maintainer email="karsten.knese@gmail.com">Karsten Knese</maintainer>
