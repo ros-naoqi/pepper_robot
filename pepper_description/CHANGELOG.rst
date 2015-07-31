@@ -2,8 +2,8 @@
 Changelog for package pepper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.5 (2015-07-31)
+------------------
 * 0.1.4
 * generate changelog
 * use proper macro names
