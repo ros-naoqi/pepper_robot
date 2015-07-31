@@ -13,4 +13,5 @@
   <run_depend>naoqi_sensors_py</run_depend>
   <run_depend>rospy</run_depend>
 
+  <conflict>pepper_sensors</conflict>
 </package>
