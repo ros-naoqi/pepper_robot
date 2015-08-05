@@ -13,5 +13,11 @@
     <arg name="network_interface" value="$(arg network_interface)" />
   </include>
 
+  <!-- launch pose manager -->
+  <include file="$(find naoqi_pose)/launch/pose_manager.launch" >
+    <arg name="nao_ip"            value="$(arg nao_ip)" />
+    <arg name="nao_port"          value="$(arg nao_port)" />
+  </include>
+
 
 </launch>
