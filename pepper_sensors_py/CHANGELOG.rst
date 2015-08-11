@@ -2,6 +2,9 @@
 Changelog for package pepper_sensors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.6 (2015-07-31)
 ------------------
 
