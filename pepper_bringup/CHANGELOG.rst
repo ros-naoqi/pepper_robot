@@ -2,8 +2,8 @@
 Changelog for package pepper_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.7 (2015-08-11)
+------------------
 * introduce namespace for pepper_bringup
 * include pose manager for teleop
 * Contributors: Karsten Knese
