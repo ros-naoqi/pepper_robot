@@ -8,6 +8,7 @@ Panels:
         - /Status1
         - /RobotModel1
         - /TF1
+        - /DepthCloud1/Auto Size1
       Splitter Ratio: 0.5
     Tree Height: 565
   - Class: rviz/Selection
@@ -481,6 +482,131 @@ Visualization Manager:
               {}
       Update Interval: 0
       Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/LaserScan
+      Color: 0; 255; 0
+      Color Transformer: FlatColor
+      Decay Time: 0
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: LaserScan
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.01
+      Style: Points
+      Topic: /pepper_robot/laser
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
+    - Alpha: 0.5
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 255; 255
+      Enabled: false
+      Name: BackSonar
+      Queue Size: 100
+      Topic: /pepper_robot/sonar/back
+      Value: false
+    - Alpha: 0.5
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 255; 255
+      Enabled: false
+      Name: FrontSonar
+      Queue Size: 100
+      Topic: /pepper_robot/sonar/front
+      Value: false
+    - Class: rviz/Camera
+      Enabled: false
+      Image Rendering: background and overlay
+      Image Topic: /pepper_robot/camera/front/image_raw
+      Name: FrontCamera
+      Overlay Alpha: 0.5
+      Queue Size: 2
+      Transport Hint: compressed
+      Value: false
+      Visibility:
+        BackSonar: true
+        BottomCamera: true
+        DepthCloud: true
+        FrontSonar: true
+        Grid: true
+        LaserScan: true
+        RobotModel: true
+        TF: true
+        Value: true
+      Zoom Factor: 1
+    - Class: rviz/Camera
+      Enabled: false
+      Image Rendering: background and overlay
+      Image Topic: /pepper_robot/camera/bottom/image_raw
+      Name: BottomCamera
+      Overlay Alpha: 0.5
+      Queue Size: 2
+      Transport Hint: raw
+      Value: false
+      Visibility:
+        BackSonar: true
+        DepthCloud: true
+        FrontCamera: true
+        FrontSonar: true
+        Grid: true
+        LaserScan: true
+        RobotModel: true
+        TF: true
+        Value: true
+      Zoom Factor: 1
+    - Alpha: 1
+      Auto Size:
+        Auto Size Factor: 1
+        Value: true
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 0.946703
+        Min Value: -0.746588
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/DepthCloud
+      Color: 255; 255; 255
+      Color Image Topic: ""
+      Color Transformer: AxisColor
+      Color Transport Hint: raw
+      Decay Time: 0
+      Depth Map Topic: /pepper_robot/camera/depth/image_raw
+      Depth Map Transport Hint: raw
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: DepthCloud
+      Occlusion Compensation:
+        Occlusion Time-Out: 30
+        Value: false
+      Position Transformer: XYZ
+      Queue Size: 5
+      Selectable: true
+      Size (Pixels): 3
+      Style: Flat Squares
+      Topic Filter: true
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
