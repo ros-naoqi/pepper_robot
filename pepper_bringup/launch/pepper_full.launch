@@ -7,12 +7,14 @@
   <arg name="network_interface"   default="eth0" />
 
   <arg name="namespace"           default="pepper_robot" />
+  <arg name="node_name"           default="pepper_driver" />
 
   <!-- naoqi driver -->
   <include file="$(find naoqi_driver)/launch/naoqi_driver.launch"  ns="$(arg namespace)" >
     <arg name="nao_ip"            value="$(arg nao_ip)" />
     <arg name="roscore_ip"        value="$(arg roscore_ip)" />
     <arg name="network_interface" value="$(arg network_interface)" />
+    <arg name="node_name" value="$(arg node_name)" />
   </include>
 
   <!-- launch pose manager -->
