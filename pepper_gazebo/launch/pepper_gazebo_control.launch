@@ -1,0 +1,22 @@
+<launch>
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find pepper_gazebo)/config/pepper_gazebo_control.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager"
+        type="spawner" respawn="false"
+        output="screen" ns="/pepper" args="joint_state_controller
+                                           LShoulderPitch,_position_controller
+                                           LShoulderRoll,_position_controller
+                                           LElbowYaw,_position_controller
+                                           LElbowRoll,_position_controller
+                                           LWristYaw,_position_controller
+                                           RShoulderPitch,_position_controller
+                                           RShoulderRoll,_position_controller
+                                           RElbowYaw,_position_controller
+                                           RElbowRoll,_position_controller
+                                           RWristYaw_position_controller
+                                           L_trajectory_controller
+                                           R_trajectory_controller
+                                         "/>
+</launch>
