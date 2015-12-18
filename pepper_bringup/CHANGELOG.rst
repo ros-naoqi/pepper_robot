@@ -2,8 +2,8 @@
 Changelog for package pepper_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.8 (2015-12-18)
+------------------
 * [pepper_bringup/package.xml] add naoqi_pose, naoqi_driver_py to run_depend
   [pepper_bringup/CMakeLists.txt] add test for launch file validation
 * Contributors: Yuki Furuta
