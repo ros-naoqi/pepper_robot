@@ -2,7 +2,7 @@
 
   <arg name="nao_ip"            default="$(optenv NAO_IP 127.0.0.1)" />
   <arg name="nao_port"          default="$(optenv NAO_PORT 9559)" />
-
+  <arg name="namespace"           default="pepper_robot" />
 
   <!-- Use CPP node by default for nao_sensors -->
   <arg name="force_python" default="true" />
@@ -19,16 +19,21 @@
   <include file="$(find pepper_sensors_py)/launch/laser.launch" >
     <arg name="nao_ip"    value="$(arg nao_ip)" />
   </include>
-  <include file="$(find pepper_sensors_py)/launch/camera.launch" ns="pepper_robot/camera/depth" >
+  <include file="$(find pepper_sensors_py)/launch/camera.launch" ns="$(arg namespace)/camera/depth" >
     <arg name="nao_ip"    value="$(arg nao_ip)" />
     <arg name="source"          value="2" />
     <arg name="color_space"     value="17" />
     <arg name="resolution"      value="1" />
   </include>
-  <include file="$(find pepper_sensors_py)/launch/camera.launch" ns="pepper_robot/camera/front" >
+  <include file="$(find pepper_sensors_py)/launch/camera.launch" ns="$(arg namespace)/camera/front" >
     <arg name="nao_ip"    value="$(arg nao_ip)" />
     <arg name="source"          value="0" />
     <arg name="color_space"     value="13" />
+  </include>
+  
+  <!-- launch pose manager -->
+  <include file="$(find naoqi_pose)/launch/pose_manager.launch" ns="$(arg namespace)/pose" >
+    <arg name="nao_ip"            value="$(arg nao_ip)" />
   </include>
 
 </launch>
