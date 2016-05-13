@@ -45,20 +45,6 @@
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
 	</xacro:macro>
-	<xacro:macro name="insert_visu_RFinger11_link">
-		<visual>
-			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger11.dae" scale="0.1 0.1 0.1"/>
-			</geometry>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
-		</visual>
-		<collision>
-			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger11_0.10.stl" scale="0.1 0.1 0.1"/>
-			</geometry>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
-		</collision>
-	</xacro:macro>
 	<xacro:macro name="insert_visu_LElbow">
 		<visual>
 			<geometry>
@@ -111,6 +97,20 @@
 		<collision>
 			<geometry>
 				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger31_0.10.stl" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</collision>
+	</xacro:macro>
+	<xacro:macro name="insert_visu_WheelFL_link">
+		<visual>
+			<geometry>
+				<mesh filename="package://pepper_meshes/meshes/1.0/WheelFL.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://pepper_meshes/meshes/1.0/WheelFL_0.10.stl" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
@@ -423,20 +423,6 @@
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
 	</xacro:macro>
-	<xacro:macro name="insert_visu_l_wrist">
-		<visual>
-			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/LWristYaw.dae" scale="0.1 0.1 0.1"/>
-			</geometry>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
-		</visual>
-		<collision>
-			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/LWristYaw_0.10.stl" scale="0.1 0.1 0.1"/>
-			</geometry>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
-		</collision>
-	</xacro:macro>
 	<xacro:macro name="insert_visu_RBicep">
 		<visual>
 			<geometry>
@@ -447,6 +433,20 @@
 		<collision>
 			<geometry>
 				<mesh filename="package://pepper_meshes/meshes/1.0/RShoulderRoll_0.10.stl" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</collision>
+	</xacro:macro>
+	<xacro:macro name="insert_visu_RFinger11_link">
+		<visual>
+			<geometry>
+				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger11.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://pepper_meshes/meshes/1.0/RFinger11_0.10.stl" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
@@ -591,6 +591,20 @@
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
 	</xacro:macro>
+	<xacro:macro name="insert_visu_l_wrist">
+		<visual>
+			<geometry>
+				<mesh filename="package://pepper_meshes/meshes/1.0/LWristYaw.dae" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://pepper_meshes/meshes/1.0/LWristYaw_0.10.stl" scale="0.1 0.1 0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</collision>
+	</xacro:macro>
 	<xacro:macro name="insert_visu_RForeArm">
 		<visual>
 			<geometry>
@@ -601,20 +615,6 @@
 		<collision>
 			<geometry>
 				<mesh filename="package://pepper_meshes/meshes/1.0/RElbowRoll_0.10.stl" scale="0.1 0.1 0.1"/>
-			</geometry>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
-		</collision>
-	</xacro:macro>
-	<xacro:macro name="insert_visu_WheelFL_link">
-		<visual>
-			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/WheelFL.dae" scale="0.1 0.1 0.1"/>
-			</geometry>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
-		</visual>
-		<collision>
-			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/WheelFL_0.10.stl" scale="0.1 0.1 0.1"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
