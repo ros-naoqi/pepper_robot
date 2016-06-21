@@ -13,7 +13,7 @@
 	<link name="Hip">
 		<inertial>
 			<mass value="1.02338"/>
-			<inertia ixx="0.00502422" ixy="0" ixz="-1.40621e-05" iyy="0.00640971" iyz="-0.000159449" izz="0.00441082"/>
+			<inertia ixx="0.00502422" ixy="0" ixz="-2.54911e-05" iyy="0.00640971" iyz="0.000159449" izz="0.00441082"/>
 			<origin rpy="0 0 0" xyz="0.00032 0 -0.06039"/>
 		</inertial>
 		<xacro:insert_visu_Hip/>
@@ -28,7 +28,7 @@
 	<link name="Pelvis">
 		<inertial>
 			<mass value="2.45917"/>
-			<inertia ixx="0.034351" ixy="0" ixz="-0.00134835" iyy="0.0303122" iyz="8.37542e-05" izz="0.0143771"/>
+			<inertia ixx="0.034351" ixy="0" ixz="0.000223034" iyy="0.0303122" iyz="-8.37542e-05" izz="0.0143771"/>
 			<origin rpy="0 0 0" xyz="0.00237 0 -0.09654"/>
 		</inertial>
 		<xacro:insert_visu_Pelvis/>
@@ -43,7 +43,7 @@
 	<link name="Tibia">
 		<inertial>
 			<mass value="11.6015"/>
-			<inertia ixx="0.129229" ixy="0.000401632" ixz="-0.0168449" iyy="0.122839" iyz="-1.01666e-08" izz="0.108168"/>
+			<inertia ixx="0.129229" ixy="-0.000401943" ixz="0.00048556" iyy="0.122839" iyz="-1.01666e-08" izz="0.108168"/>
 			<origin rpy="0 0 0" xyz="0.00220451 0 -0.185729"/>
 		</inertial>
 		<xacro:insert_visu_Tibia/>

@@ -11,4 +11,6 @@
 	<xacro:include filename="pepper_sensors.xacro"/>
 	<xacro:include filename="pepper_fingers.xacro"/>
 	<xacro:include filename="pepper_wheels.xacro"/>
+	<xacro:include filename="pepperGazebo.xacro"/>
+	<xacro:include filename="pepperTransmission.xacro"/>
 </robot>

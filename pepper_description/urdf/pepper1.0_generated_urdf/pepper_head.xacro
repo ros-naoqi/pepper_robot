@@ -13,7 +13,7 @@
 	<link name="Neck">
 		<inertial>
 			<mass value="0.27391"/>
-			<inertia ixx="0.000343501" ixy="0" ixz="4.87482e-05" iyy="0.000493898" iyz="-2.09863e-06" izz="0.000215252"/>
+			<inertia ixx="0.000343501" ixy="0" ixz="-1.88563e-05" iyy="0.000493898" iyz="2.09863e-06" izz="0.000215252"/>
 			<origin rpy="0 0 0" xyz="-0.00207 0 -0.02636"/>
 		</inertial>
 		<xacro:insert_visu_Neck/>
@@ -28,7 +28,7 @@
 	<link name="Head">
 		<inertial>
 			<mass value="1.51893"/>
-			<inertia ixx="0.00597209" ixy="0" ixz="0.000931862" iyy="0.0059054" iyz="-4.3428e-07" izz="0.00570374"/>
+			<inertia ixx="0.00597209" ixy="0" ixz="0.000125138" iyy="0.0059054" iyz="4.3428e-07" izz="0.00570374"/>
 			<origin rpy="0 0 0" xyz="0.00312 0 0.11152"/>
 		</inertial>
 		<xacro:insert_visu_Head/>

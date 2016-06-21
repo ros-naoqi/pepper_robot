@@ -33,14 +33,14 @@
 	<joint name="LaserSensor/VerticalLeft_sensor_fixedjoint" type="fixed">
 		<parent link="Tibia"/>
 		<child link="VerticalLeftLaser_frame"/>
-		<origin rpy="0 0.349044 0" xyz="0.0562 0 -0.0692"/>
+		<origin rpy="0 0.349066 0" xyz="0.0562 0 -0.0692"/>
 		<axis xyz="0 0 0"/>
 	</joint>
 	<link name="SurroundingFrontLaser_device_frame"/>
 	<joint name="LaserSensor/Front_sensor_fixedjoint" type="fixed">
 		<parent link="Tibia"/>
 		<child link="SurroundingFrontLaser_device_frame"/>
-		<origin rpy="0 0.349044 0" xyz="0.0562 0 -0.0692"/>
+		<origin rpy="0 0.349066 0" xyz="0.0562 0 -0.0692"/>
 		<axis xyz="0 0 0"/>
 	</joint>
 	<link name="BumperB_frame"/>
@@ -61,7 +61,7 @@
 	<joint name="LaserSensor/Shovel_sensor_fixedjoint" type="fixed">
 		<parent link="Tibia"/>
 		<child link="ShovelLaser_frame"/>
-		<origin rpy="0 0.349044 0" xyz="0.0562 0 -0.0692"/>
+		<origin rpy="0 0.349066 0" xyz="0.0562 0 -0.0692"/>
 		<axis xyz="0 0 0"/>
 	</joint>
 	<link name="ImuTorsoAccelerometer_frame"/>
@@ -71,18 +71,18 @@
 		<origin rpy="0 0 0" xyz="0.00239 -0.03575 0.00626"/>
 		<axis xyz="0 0 0"/>
 	</joint>
-	<link name="CameraTop_frame"/>
-	<joint name="CameraTop_sensor_fixedjoint" type="fixed">
+	<link name="RSpeaker_frame"/>
+	<joint name="SpeakerRight_sensor_fixedjoint" type="fixed">
 		<parent link="Head"/>
-		<child link="CameraTop_frame"/>
-		<origin rpy="0 0 0" xyz="0.0868 0 0.1631"/>
+		<child link="RSpeaker_frame"/>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
 		<axis xyz="0 0 0"/>
 	</joint>
 	<link name="SurroundingRightLaser_device_frame"/>
 	<joint name="LaserSensor/Right_sensor_fixedjoint" type="fixed">
 		<parent link="Tibia"/>
 		<child link="SurroundingRightLaser_device_frame"/>
-		<origin rpy="4.08851e-07 0.191857 -1.60746" xyz="-0.018 -0.0899 -0.0759"/>
+		<origin rpy="0 0.349066 -1.5708" xyz="-0.018 -0.0899 -0.0759"/>
 		<axis xyz="0 0 0"/>
 	</joint>
 	<link name="LSpeaker_frame"/>
@@ -99,18 +99,18 @@
 		<origin rpy="1.5708 -1.5708 -3.14159" xyz="0.0523 0 0.0304"/>
 		<axis xyz="0 0 0"/>
 	</joint>
-	<link name="ImuBaseGyrometer_frame"/>
-	<joint name="GyrometerBase_sensor_fixedjoint" type="fixed">
-		<parent link="Tibia"/>
-		<child link="ImuBaseGyrometer_frame"/>
-		<origin rpy="0 0 0" xyz="0 0 -0.3"/>
+	<link name="CameraTop_frame"/>
+	<joint name="CameraTop_sensor_fixedjoint" type="fixed">
+		<parent link="Head"/>
+		<child link="CameraTop_frame"/>
+		<origin rpy="0 0 0" xyz="0.08601 0 0.16284"/>
 		<axis xyz="0 0 0"/>
 	</joint>
 	<link name="SurroundingLeftLaser_device_frame"/>
 	<joint name="LaserSensor/Left_sensor_fixedjoint" type="fixed">
 		<parent link="Tibia"/>
 		<child link="SurroundingLeftLaser_device_frame"/>
-		<origin rpy="8.34035e-09 0.191982 1.5708" xyz="-0.018 0.0899 -0.0759"/>
+		<origin rpy="0 0.349066 1.5708" xyz="-0.018 0.0899 -0.0759"/>
 		<axis xyz="0 0 0"/>
 	</joint>
 	<link name="CameraDepth_frame"/>
@@ -138,7 +138,7 @@
 	<joint name="LaserSensor/VerticalRight_sensor_fixedjoint" type="fixed">
 		<parent link="Tibia"/>
 		<child link="VerticalRightLaser_frame"/>
-		<origin rpy="0 0.349044 0" xyz="0.0562 0 -0.0692"/>
+		<origin rpy="0 0.349066 0" xyz="0.0562 0 -0.0692"/>
 		<axis xyz="0 0 0"/>
 	</joint>
 	<link name="SonarFront_frame"/>
@@ -159,7 +159,7 @@
 	<joint name="CameraBottom_sensor_fixedjoint" type="fixed">
 		<parent link="Head"/>
 		<child link="CameraBottom_frame"/>
-		<origin rpy="0 0.698132 0" xyz="0.0936 0 0.0616"/>
+		<origin rpy="0 0.698132 0" xyz="0.09262 0 0.06177"/>
 		<axis xyz="0 0 0"/>
 	</joint>
 	<link name="CameraTop_optical_frame"/>
@@ -172,7 +172,7 @@
 	<joint name="AccelerometerBase_sensor_fixedjoint" type="fixed">
 		<parent link="Tibia"/>
 		<child link="ImuBaseAccelerometer_frame"/>
-		<origin rpy="0 0 0" xyz="0 0 -0.3"/>
+		<origin rpy="0 0 0" xyz="0.0147 -0.0017 -0.26319"/>
 		<axis xyz="0 0 0"/>
 	</joint>
 	<link name="ImuTorsoGyrometer_frame"/>
@@ -215,13 +215,6 @@
 		<parent link="torso"/>
 		<child link="ChestButton_frame"/>
 		<origin rpy="0 0 0" xyz="0.049871 0.001588 0.055163"/>
-		<axis xyz="0 0 0"/>
-	</joint>
-	<link name="RSpeaker_frame"/>
-	<joint name="SpeakerRight_sensor_fixedjoint" type="fixed">
-		<parent link="Head"/>
-		<child link="RSpeaker_frame"/>
-		<origin rpy="0 0 0" xyz="0 0 0"/>
 		<axis xyz="0 0 0"/>
 	</joint>
 	<link name="HeadTouchMiddle_frame"/>

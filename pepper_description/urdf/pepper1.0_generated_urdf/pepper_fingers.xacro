@@ -31,20 +31,6 @@
 		<axis xyz="0 0 1.0"/>
 		<mimic joint="LHand" multiplier="0.872665" offset="0"/>
 	</joint>
-	<link name="RFinger11_link">
-		<inertial>
-			<mass value="2e-06"/>
-			<inertia ixx="1.1e-09" ixy="0" ixz="0" iyy="1.1e-09" iyz="0" izz="1.1e-09"/>
-		</inertial>
-		<xacro:insert_visu_RFinger11_link/>
-	</link>
-	<joint name="RFinger11" type="continuous">
-		<parent link="r_wrist"/>
-		<child link="RFinger11_link"/>
-		<origin rpy="1.39757 1.04064 0.0334335" xyz="0.0821 0.0268 0.004"/>
-		<axis xyz="0 0 1.0"/>
-		<mimic joint="RHand" multiplier="0.872665" offset="0"/>
-	</joint>
 	<link name="RFinger12_link">
 		<inertial>
 			<mass value="2e-06"/>
@@ -252,6 +238,20 @@
 		<parent link="RFinger22_link"/>
 		<child link="RFinger23_link"/>
 		<origin rpy="0 0 -1.0472" xyz="0.018 0 0"/>
+		<axis xyz="0 0 1.0"/>
+		<mimic joint="RHand" multiplier="0.872665" offset="0"/>
+	</joint>
+	<link name="RFinger11_link">
+		<inertial>
+			<mass value="2e-06"/>
+			<inertia ixx="1.1e-09" ixy="0" ixz="0" iyy="1.1e-09" iyz="0" izz="1.1e-09"/>
+		</inertial>
+		<xacro:insert_visu_RFinger11_link/>
+	</link>
+	<joint name="RFinger11" type="continuous">
+		<parent link="r_wrist"/>
+		<child link="RFinger11_link"/>
+		<origin rpy="1.39757 1.04064 0.0334335" xyz="0.0821 0.0268 0.004"/>
 		<axis xyz="0 0 1.0"/>
 		<mimic joint="RHand" multiplier="0.872665" offset="0"/>
 	</joint>

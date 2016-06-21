@@ -1,0 +1,607 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- MACROS FOR DISABLE LINKS -->
+	<xacro:property name="PI" value="3.14159265359" />
+    <xacro:macro name="DisabledLinks" params="side side_small">
+        <plugin name="${side}Finger11_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side}Finger11_link</link>
+        </plugin>
+        <plugin name="${side}Finger12_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side}Finger12_link</link>
+        </plugin>
+        <plugin name="${side}Finger13_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side}Finger13_link</link>
+        </plugin>
+        <plugin name="${side}Finger21_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side}Finger21_link</link>
+        </plugin>
+        <plugin name="${side}Finger22_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side}Finger22_link</link>
+        </plugin>
+        <plugin name="${side}Finger23_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side}Finger23_link</link>
+        </plugin>
+        <plugin name="${side}Finger31_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side}Finger31_link</link>
+        </plugin>
+        <plugin name="${side}Finger32_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side}Finger32_link</link>
+        </plugin>
+        <plugin name="${side}Finger33_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side}Finger33_link</link>
+        </plugin>
+        <plugin name="${side}Finger41_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side}Finger41_link</link>
+        </plugin>
+        <plugin name="${side}Finger42_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side}Finger42_link</link>
+        </plugin>
+        <plugin name="${side}Finger43_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side}Finger43_link</link>
+        </plugin>
+        <plugin name="${side}Thumb1_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side}Thumb1_link</link>
+        </plugin>
+        <plugin name="${side}Thumb2_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side}Thumb2_link</link>
+        </plugin> 
+        <plugin name="${side_small}_gripper" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side_small}_gripper</link>
+        </plugin>
+    </xacro:macro> 
+    <!-- MACROS FOR MIMIC JOINTS -->
+    <!-- Fingers -->
+    <xacro:macro name="FingerMimics" params="side num">
+        <plugin name="mimic_${side}Finger${num}1" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+            <joint>${side}Hand</joint>
+            <mimicJoint>${side}Finger${num}1</mimicJoint>
+            <multiplier>-${PI/4}</multiplier>
+            <offset>${PI/4}</offset>
+        </plugin>
+        <plugin name="mimic_${side}Finger${num}2" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+            <joint>${side}Hand</joint>
+            <mimicJoint>${side}Finger${num}2</mimicJoint>
+            <multiplier>-${PI/4}</multiplier>
+            <offset>${PI/4}</offset>
+        </plugin>
+        <plugin name="mimic_${side}Finger${num}3" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+            <joint>${side}Hand</joint>
+            <mimicJoint>${side}Finger${num}3</mimicJoint>
+            <multiplier>-${PI/4}</multiplier>
+            <offset>${PI/4}</offset>
+        </plugin>
+    </xacro:macro> 
+    <!-- Thumbs -->
+    <xacro:macro name="ThumbMimics" params="side">
+        <plugin name="${side}Thumb1" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+            <joint>${side}Hand</joint>
+            <mimicJoint>${side}Thumb1</mimicJoint>
+            <multiplier>-${PI/4}</multiplier>
+            <offset>${PI/4}</offset>
+        </plugin>
+        <plugin name="${side}Thumb2" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+            <joint>${side}Hand</joint>
+            <mimicJoint>${side}Thumb2</mimicJoint>
+            <multiplier>-${PI/4}</multiplier>
+            <offset>${PI/4}</offset>
+        </plugin>
+    </xacro:macro> 
+    <!-- GAZEBO ROS CONTROL AND IMU PLUGIN -->
+
+    <gazebo>
+
+        <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+            <robotNamespace></robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        </plugin>
+
+
+        <xacro:FingerMimics side="L" num="1"/>
+        <xacro:FingerMimics side="L" num="2"/>
+        <xacro:FingerMimics side="L" num="3"/>
+        <xacro:FingerMimics side="L" num="4"/>
+        <xacro:FingerMimics side="R" num="1"/>
+        <xacro:FingerMimics side="R" num="2"/>
+        <xacro:FingerMimics side="R" num="3"/>
+        <xacro:FingerMimics side="R" num="4"/>
+
+        <xacro:ThumbMimics side="L"/>
+        <xacro:ThumbMimics side="R"/>
+
+        <xacro:DisabledLinks side="L" side_small="l"/>
+        <xacro:DisabledLinks side="R" side_small="r"/> 
+    </gazebo>
+    <!-- END OF GAZEBO ROS CONTROL PLUGIN -->
+    <!-- GAZEBO MATERIALS -->
+
+    <gazebo reference="base_footprint">
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="base_link">
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+
+    <gazebo reference="torso">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+
+    <gazebo reference="Neck">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="Head">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="gaze">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo> 
+
+
+<!-- ARMS -->
+    <gazebo reference="LShoulder">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="LBicep">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="LElbow">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="LForeArm">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo> 
+    <gazebo reference="l_wrist">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="l_gripper">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo> 
+
+    <gazebo reference="RShoulder">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="RBicep">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="RElbow">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="RForeArm">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo> 
+    <gazebo reference="r_wrist">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="r_gripper">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>   
+
+    <gazebo reference="LFinger11_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="LFinger12_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="LFinger13_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="LFinger21_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="LFinger22_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="LFinger23_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+
+    <gazebo reference="LFinger31_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="LFinger32_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="LFinger33_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="LFinger41_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="LFinger42_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="LFinger43_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+
+    <gazebo reference="LThumb1_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="LThumb2_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo> 
+
+    <gazebo reference="Hip">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="Pelvis">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="Tibia">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+
+    <gazebo reference="WheelFL_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+<!--        <kp value="10000000.0" />
+        <kd value="1.0" /> -->
+        <fdir1 value="0 0 1"/>
+        <minDepth>0.003</minDepth>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="WheelB_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+<!--        <kp value="10000000.0" />
+        <kd value="1.0" />
+-->
+        <fdir1 value="0 0 1"/>
+        <minDepth>0.003</minDepth>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="WheelFR_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+<!--        <kp value="10000000.0" />
+        <kd value="1.0" /> -->
+        <fdir1 value="0 0 1"/>
+        <minDepth>0.003</minDepth>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+
+    <gazebo reference="RFinger11_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="RFinger12_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="RFinger13_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="RFinger21_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="RFinger22_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="RFinger23_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="RFinger31_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="RFinger32_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="RFinger33_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="RFinger41_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="RFinger42_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="RFinger43_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+
+    <gazebo reference="RThumb1_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="RThumb2_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+
+<!--
+<gazebo reference="BumperB_frame">
+  <mu1>0.5</mu1>
+  <mu2>0.5</mu2>
+  <selfCollide>false</selfCollide>
+  <turnGravityOff>false</turnGravityOff>
+  <fdir1>1 0 0</fdir1>
+  <maxVel>0.1</maxVel>
+  <minDepth>0.003</minDepth>
+  <sensor name="BumperB" type="contact">
+    <always_on>1</always_on>
+    <update_rate>20</update_rate>
+    <visualize>false</visualize>
+    <contact>
+      <collision>BumperB_frame_collision</collision>
+    </contact>
+    <plugin filename="libgazebo_ros_bumper.so" name="gazebo_pepper_BumperB">
+      <robotNamespace>pepper_robot</robotNamespace>
+      <alwaysOn>true</alwaysOn>
+      <bumperTopicName>Bumper/Back</bumperTopicName>
+      <frameName>BumperB_frame</frameName>
+    </plugin>
+  </sensor>
+</gazebo>
+
+<gazebo reference="BumperFL_frame">
+  <mu1>0.5</mu1>
+  <mu2>0.5</mu2>
+  <selfCollide>false</selfCollide>
+  <turnGravityOff>false</turnGravityOff>
+  <fdir1>1 0 0</fdir1>
+  <maxVel>0.1</maxVel>
+  <minDepth>0.003</minDepth>
+  <sensor name="BumperFL" type="contact">
+    <always_on>1</always_on>
+    <update_rate>20</update_rate>
+    <visualize>false</visualize>
+    <contact>
+      <collision>BumperFL_frame_collision</collision>
+    </contact>
+    <plugin filename="libgazebo_ros_bumper.so" name="gazebo_pepper_BumperFL">
+      <robotNamespace>pepper_robot</robotNamespace>
+      <alwaysOn>true</alwaysOn>
+      <bumperTopicName>Bumper/FrontLeft</bumperTopicName>
+      <frameName>BumperFL_frame</frameName>
+    </plugin>
+  </sensor>
+</gazebo>
+
+<gazebo reference="BumperFR_frame">
+  <mu1>0.5</mu1>
+  <mu2>0.5</mu2>
+  <selfCollide>false</selfCollide>
+  <turnGravityOff>false</turnGravityOff>
+  <fdir1>1 0 0</fdir1>
+  <maxVel>0.1</maxVel>
+  <minDepth>0.003</minDepth>
+  <sensor name="BumperFR" type="contact">
+    <always_on>1</always_on>
+    <update_rate>20</update_rate>
+    <visualize>false</visualize>
+    <contact>
+      <collision>BumperFR_frame_collision</collision>
+    </contact>
+    <plugin filename="libgazebo_ros_bumper.so" name="gazebo_pepper_BumperFR">
+      <robotNamespace>pepper_robot</robotNamespace>
+      <alwaysOn>true</alwaysOn>
+      <bumperTopicName>Bumper/FrontRight</bumperTopicName>
+      <frameName>BumperFR_frame</frameName>
+    </plugin>
+  </sensor>
+</gazebo>
+-->
+<!--
+    Sonars
+-->
+<!--
+<gazebo reference="SonarBack_frame">
+  <sensor type="ray" name="SonarBack">
+    <pose>0 0 0 0 0 0</pose>
+    <update_rate>20</update_rate>
+    <visualize>false</visualize>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>5</samples>
+          <resolution>1</resolution>
+          <min_angle>-0.2617993877991494</min_angle>
+          <max_angle>0.2617993877991494</max_angle> 
+        </horizontal>
+        <vertical>
+          <samples>5</samples>
+          <resolution>1</resolution>
+          <min_angle>-0.13</min_angle>
+          <max_angle>0.13</max_angle> 
+        </vertical>
+      </scan>
+      <range>
+        <min>0.025</min>
+        <max>2.55</max>
+        <resolution>1</resolution>
+      </range>
+    </ray>
+    <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
+      <robotNamespace>pepper_robot</robotNamespace>
+      <gaussianNoise>0.05</gaussianNoise>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>20</updateRate>
+      <topicName>sonar_back</topicName>
+      <frameName>SonarBack_frame</frameName>
+      <minRange>0.025</minRange>
+      <maxRange>2.55</maxRange>
+      <fov>0.5235987755982988</fov> 
+      <radiation>ultrasound</radiation>
+    </plugin>
+  </sensor>
+</gazebo> 
+
+<gazebo reference="SonarFront_frame">
+  <sensor type="ray" name="SonarFront">
+    <pose>0 0 0 0 0 0</pose>
+    <update_rate>20</update_rate>
+    <visualize>false</visualize>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>5</samples>
+          <resolution>1</resolution>
+          <min_angle>-0.2617993877991494</min_angle>
+          <max_angle>0.2617993877991494</max_angle> 
+        </horizontal>
+        <vertical>
+          <samples>5</samples>
+          <resolution>1</resolution>
+          <min_angle>-0.13</min_angle>
+          <max_angle>0.13</max_angle>
+        </vertical>
+      </scan>
+      <range>
+        <min>0.025</min>
+        <max>2.55</max> 
+        <resolution>1</resolution>
+      </range>
+    </ray>
+    <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
+      <robotNamespace>pepper_robot</robotNamespace>
+      <gaussianNoise>0.05</gaussianNoise>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>20</updateRate>
+      <topicName>sonar_front</topicName>
+      <frameName>SonarFront_frame</frameName>
+      <minRange>0.025</minRange>
+      <maxRange>2.55</maxRange>
+      <fov>0.5235987755982988</fov>
+      <radiation>ultrasound</radiation>
+    </plugin>
+  </sensor>
+</gazebo> 
+-->
+</robot>
+
