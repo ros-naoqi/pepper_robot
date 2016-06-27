@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find pepper_dcm_control)/config/pepper_position_control.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="pepper_dcm_control" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args="
+      /pepper_dcm/HeadYaw_position_controller /pepper_dcm/HeadPitch_position_controller
+      /pepper_dcm/LShoulderPitch_position_controller /pepper_dcm/LShoulderRoll_position_controller
+      /pepper_dcm/LElbowYaw_position_controller /pepper_dcm/LElbowRoll_position_controller /pepper_dcm/LWristYaw_position_controller
+      /pepper_dcm/RShoulderPitch_position_controller /pepper_dcm/RShoulderRoll_position_controller 
+      /pepper_dcm/RElbowYaw_position_controller /pepper_dcm/RElbowRoll_position_controller /pepper_dcm/RWristYaw_position_controller 
+      /pepper_dcm/LHand_position_controller /pepper_dcm/RHand_position_controller      
+      /pepper_dcm/HipRoll_position_controller /pepper_dcm/HipPitch_position_controller /pepper_dcm/KneePitch_position_controller 
+      /pepper_dcm/WheelB_position_controller /pepper_dcm/WheelFL_position_controller /pepper_dcm/WheelFR_position_controller
+      /pepper_dcm/joint_state_controller"/>
+</launch>

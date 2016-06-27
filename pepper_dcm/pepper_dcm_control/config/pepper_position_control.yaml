@@ -1,0 +1,86 @@
+pepper_dcm:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Controllers ------------------------------------------------
+  HeadYaw_position_controller:
+    type: position_controllers/JointPositionController
+    joint: HeadYaw
+
+  HeadPitch_position_controller:
+    type: position_controllers/JointPositionController
+    joint: HeadPitch
+
+  LShoulderPitch_position_controller:
+    type: position_controllers/JointPositionController
+    joint: LShoulderPitch
+
+  LShoulderRoll_position_controller:
+    type: position_controllers/JointPositionController
+    joint: LShoulderRoll
+
+  LElbowYaw_position_controller:
+    type: position_controllers/JointPositionController
+    joint: LElbowYaw
+
+  LElbowRoll_position_controller:
+    type: position_controllers/JointPositionController
+    joint: LElbowRoll
+
+  LWristYaw_position_controller:
+    type: position_controllers/JointPositionController
+    joint: LWristYaw
+
+  LHand_position_controller:
+    type: position_controllers/JointPositionController
+    joint: LHand
+
+  RShoulderPitch_position_controller:
+    type: position_controllers/JointPositionController
+    joint: RShoulderPitch
+
+  RShoulderRoll_position_controller:
+    type: position_controllers/JointPositionController
+    joint: RShoulderRoll
+
+  RElbowYaw_position_controller:
+    type: position_controllers/JointPositionController
+    joint: RElbowYaw
+
+  RWristYaw_position_controller:
+    type: position_controllers/JointPositionController
+    joint: RWristYaw
+
+  RElbowRoll_position_controller:
+    type: position_controllers/JointPositionController
+    joint: RElbowRoll
+
+  RHand_position_controller:
+    type: position_controllers/JointPositionController
+    joint: RHand
+
+  HipRoll_position_controller:
+    type: position_controllers/JointPositionController
+    joint: HipRoll
+
+  HipPitch_position_controller:
+    type: position_controllers/JointPositionController
+    joint: HipPitch
+
+  KneePitch_position_controller:
+    type: position_controllers/JointPositionController
+    joint: KneePitch
+    
+  WheelB_position_controller:
+    type: position_controllers/JointPositionController
+    joint: WheelB
+    
+  WheelFL_position_controller:
+    type: position_controllers/JointPositionController
+    joint: WheelFL
+    
+  WheelFR_position_controller:
+    type: position_controllers/JointPositionController
+    joint: WheelFR
