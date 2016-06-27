@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>pepper_dcm_control</name>
+  <version>0.0.0</version>
+  <description>DCM control for Pepper robot</description>
+
+  <author email="mikael.arguedas@gmail.com">Mikael Arguedas</author>
+  <author email="natalia.lyubova@gmail.com">Natalia Lyubova</author>
+  <maintainer email="natalia.lyubova@gmail.com">Natalia Lyubova</maintainer>
+
+  <license>Apache 2.0</license>
+
+  <url type="bugtracker">https://github.com/ros-naoqi/pepper_robot/issues</url>
+  <url type="repository">https://github.com/ros-naoqi/pepper_robot.git</url>
+
+  <run_depend>controller_manager</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
