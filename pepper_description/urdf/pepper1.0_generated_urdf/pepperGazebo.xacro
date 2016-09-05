@@ -334,7 +334,7 @@
         <mu2>0.5</mu2>
 <!--        <kp value="10000000.0" />
         <kd value="1.0" /> -->
-        <fdir1 value="0 0 1"/>
+        <fdir1 value="1 1 1"/>
         <minDepth>0.003</minDepth>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
@@ -344,7 +344,7 @@
 <!--        <kp value="10000000.0" />
         <kd value="1.0" />
 -->
-        <fdir1 value="0 0 1"/>
+        <fdir1 value="1 1 1"/>
         <minDepth>0.003</minDepth>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
@@ -353,7 +353,7 @@
         <mu2>0.5</mu2>
 <!--        <kp value="10000000.0" />
         <kd value="1.0" /> -->
-        <fdir1 value="0 0 1"/>
+        <fdir1 value="1 1 1"/>
         <minDepth>0.003</minDepth>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
