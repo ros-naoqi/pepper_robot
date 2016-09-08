@@ -14,6 +14,7 @@
   <run_depend>naoqi_sensors_py</run_depend>
   <run_depend>pepper_description</run_depend>
   <run_depend>pepper_sensors_py</run_depend>
+  <run_depend>rgbd_launch</run_depend>
 
   <test_depend>rostest</test_depend>
   <test_depend>roslaunch</test_depend>
