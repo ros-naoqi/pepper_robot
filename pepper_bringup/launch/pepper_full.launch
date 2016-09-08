@@ -22,4 +22,9 @@
     <arg name="nao_port"          value="$(arg nao_port)" />
   </include>
 
+  <!-- launch perception -->
+  <include file="$(find pepper_bringup)/launch/perception.launch.xml">
+    <arg name="namespace"         value="$(arg namespace)" />
+  </include>
+
 </launch>
