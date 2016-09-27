@@ -330,30 +330,29 @@
     </gazebo>
 
     <gazebo reference="WheelFL_link">
-        <mu1>0.5</mu1>
-        <mu2>0.5</mu2>
-<!--        <kp value="10000000.0" />
-        <kd value="1.0" /> -->
-        <fdir1 value="1 1 1"/>
+        <mu1>1</mu1>
+        <mu2>0</mu2>
+        <kp value="10000000.0" />
+        <kd value="1.0" />
+        <fdir1 value="1 0 0"/>
         <minDepth>0.003</minDepth>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
     <gazebo reference="WheelB_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
-<!--        <kp value="10000000.0" />
+        <kp value="10000000.0" />
         <kd value="1.0" />
--->
-        <fdir1 value="1 1 1"/>
+        <fdir1 value="1 0 0"/>
         <minDepth>0.003</minDepth>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
     <gazebo reference="WheelFR_link">
-        <mu1>0.5</mu1>
-        <mu2>0.5</mu2>
-<!--        <kp value="10000000.0" />
-        <kd value="1.0" /> -->
-        <fdir1 value="1 1 1"/>
+        <mu1>0</mu1>
+        <mu2>1</mu2>
+        <kp value="10000000.0" />
+        <kd value="1.0" />
+        <fdir1 value="0 1 0"/>
         <minDepth>0.003</minDepth>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
@@ -684,5 +683,21 @@
   </sensor>
 </gazebo> 
 -->
+<gazebo>
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <alwaysOn>true</alwaysOn>
+    <updateRate>100</updateRate>
+    <robotNamespace>/</robotNamespace>
+    <leftJoint>WheelFL</leftJoint>
+    <rightJoint>WheelFR</rightJoint>
+    <wheelSeparation>0.170</wheelSeparation>
+    <wheelDiameter>0.140</wheelDiameter>
+    <torque>36.9</torque>
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom_diffdrive</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <robotBaseFrame>base_footprint</robotBaseFrame>
+  </plugin>
+</gazebo>
 </robot>
 

@@ -141,7 +141,7 @@
                 <transmission name="Wheel${side}_Transmission">
                         <type>transmission_interface/SimpleTransmission</type>
                         <joint name="Wheel${side}">
-                                <hardwareInterface>PositionJointInterface</hardwareInterface>
+                                <hardwareInterface>EffortJointInterface</hardwareInterface>
                         </joint>
                         <actuator name="Wheel${side}_Motor">
                                 <!-- Dummy Values -->

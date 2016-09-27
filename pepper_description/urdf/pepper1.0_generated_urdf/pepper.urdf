@@ -1931,30 +1931,29 @@
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
   <gazebo reference="WheelFL_link">
-    <mu1>0.5</mu1>
-    <mu2>0.5</mu2>
-    <!--        <kp value="10000000.0" />
-        <kd value="1.0" /> -->
-    <fdir1 value="1 1 1"/>
+    <mu1>1</mu1>
+    <mu2>0</mu2>
+    <kp value="10000000.0"/>
+    <kd value="1.0"/>
+    <fdir1 value="1 0 0"/>
     <minDepth>0.003</minDepth>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
   <gazebo reference="WheelB_link">
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
-    <!--        <kp value="10000000.0" />
-        <kd value="1.0" />
--->
-    <fdir1 value="1 1 1"/>
+    <kp value="10000000.0"/>
+    <kd value="1.0"/>
+    <fdir1 value="1 0 0"/>
     <minDepth>0.003</minDepth>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
   <gazebo reference="WheelFR_link">
-    <mu1>0.5</mu1>
-    <mu2>0.5</mu2>
-    <!--        <kp value="10000000.0" />
-        <kd value="1.0" /> -->
-    <fdir1 value="1 1 1"/>
+    <mu1>0</mu1>
+    <mu2>1</mu2>
+    <kp value="10000000.0"/>
+    <kd value="1.0"/>
+    <fdir1 value="0 1 0"/>
     <minDepth>0.003</minDepth>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
@@ -2280,6 +2279,22 @@
   </sensor>
 </gazebo> 
 -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100</updateRate>
+      <robotNamespace>/</robotNamespace>
+      <leftJoint>WheelFL</leftJoint>
+      <rightJoint>WheelFR</rightJoint>
+      <wheelSeparation>0.170</wheelSeparation>
+      <wheelDiameter>0.140</wheelDiameter>
+      <torque>36.9</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom_diffdrive</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_footprint</robotBaseFrame>
+    </plugin>
+  </gazebo>
   <!-- HEAD -->
   <transmission name="HeadYaw_Transmission">
     <type>transmission_interface/SimpleTransmission</type>
@@ -2463,7 +2478,7 @@
   <transmission name="WheelFL_Transmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="WheelFL">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="WheelFL_Motor">
       <!-- Dummy Values -->
@@ -2474,7 +2489,7 @@
   <transmission name="WheelB_Transmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="WheelB">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="WheelB_Motor">
       <!-- Dummy Values -->
@@ -2485,7 +2500,7 @@
   <transmission name="WheelFR_Transmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="WheelFR">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="WheelFR_Motor">
       <!-- Dummy Values -->
