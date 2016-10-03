@@ -184,7 +184,7 @@
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>true</turnGravityOff>
-    </gazebo> 
+    </gazebo>
 
     <gazebo reference="RShoulder">
         <mu1>0.5</mu1>
@@ -221,7 +221,7 @@
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>true</turnGravityOff>
-    </gazebo>   
+    </gazebo>
 
     <gazebo reference="LFinger11_link">
         <mu1>0.5</mu1>
@@ -541,7 +541,7 @@
       <collision>BumperB_frame_collision</collision>
     </contact>
     <plugin filename="libgazebo_ros_bumper.so" name="gazebo_pepper_BumperB">
-      <robotNamespace>pepper_robot</robotNamespace>
+      <robotNamespace>/pepper_robot</robotNamespace>
       <alwaysOn>true</alwaysOn>
       <bumperTopicName>Bumper/Back</bumperTopicName>
       <frameName>BumperB_frame</frameName>
@@ -565,7 +565,7 @@
       <collision>BumperFL_frame_collision</collision>
     </contact>
     <plugin filename="libgazebo_ros_bumper.so" name="gazebo_pepper_BumperFL">
-      <robotNamespace>pepper_robot</robotNamespace>
+      <robotNamespace>/pepper_robot</robotNamespace>
       <alwaysOn>true</alwaysOn>
       <bumperTopicName>Bumper/FrontLeft</bumperTopicName>
       <frameName>BumperFL_frame</frameName>
@@ -589,7 +589,7 @@
       <collision>BumperFR_frame_collision</collision>
     </contact>
     <plugin filename="libgazebo_ros_bumper.so" name="gazebo_pepper_BumperFR">
-      <robotNamespace>pepper_robot</robotNamespace>
+      <robotNamespace>/pepper_robot</robotNamespace>
       <alwaysOn>true</alwaysOn>
       <bumperTopicName>Bumper/FrontRight</bumperTopicName>
       <frameName>BumperFR_frame</frameName>
@@ -628,7 +628,7 @@
       </range>
     </ray>
     <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
-      <robotNamespace>pepper_robot</robotNamespace>
+      <robotNamespace>/pepper_robot</robotNamespace>
       <gaussianNoise>0.05</gaussianNoise>
       <alwaysOn>true</alwaysOn>
       <updateRate>20</updateRate>
@@ -669,7 +669,7 @@
       </range>
     </ray>
     <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
-      <robotNamespace>pepper_robot</robotNamespace>
+      <robotNamespace>/pepper_robot</robotNamespace>
       <gaussianNoise>0.05</gaussianNoise>
       <alwaysOn>true</alwaysOn>
       <updateRate>20</updateRate>
@@ -683,6 +683,7 @@
   </sensor>
 </gazebo> 
 -->
+<!-- Drive controller -->
 <gazebo>
   <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
     <alwaysOn>true</alwaysOn>
