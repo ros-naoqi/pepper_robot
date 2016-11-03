@@ -78,8 +78,20 @@
 		</inertial>
 		<xacro:insert_visu_l_wrist/>
 	</link>
-	<joint name="LHand" type="revolute">
+	<joint name="LGrasp" type="revolute">
 		<parent link="l_wrist"/>
+		<child link="l_grasp_link"/>
+		<origin rpy="0 0 0" xyz="0.065 0 0"/>
+		<limit effort="0.0" lower="0.0" upper="0.0" velocity="0.0"/>
+	</joint>
+	<link name="l_grasp_link">
+		<inertial>
+			<mass value="2e-06"/>
+			<inertia ixx="1.1e-09" ixy="0" ixz="0" iyy="1.1e-09" iyz="0" izz="1.1e-09"/>
+		</inertial>
+	</link>
+	<joint name="LHand" type="revolute">
+		<parent link="l_grasp_link"/>
 		<child link="l_gripper"/>
 		<origin rpy="0 0 0" xyz="0.025 0 0"/>
 		<axis xyz="1.0 0 0"/>
@@ -166,8 +178,20 @@
 		</inertial>
 		<xacro:insert_visu_r_wrist/>
 	</link>
-	<joint name="RHand" type="revolute">
+	<joint name="RGrasp" type="revolute">
 		<parent link="r_wrist"/>
+		<child link="r_grasp_link"/>
+		<origin rpy="0.0 0 0" xyz="0.065 0 0"/>
+		<limit effort="0.0" lower="0.0" upper="0.0" velocity="0.0"/>
+	</joint>
+	<link name="r_grasp_link">
+		<inertial>
+			<mass value="2e-06"/>
+			<inertia ixx="1.1e-09" ixy="0" ixz="0" iyy="1.1e-09" iyz="0" izz="1.1e-09"/>
+		</inertial>
+	</link>
+	<joint name="RHand" type="revolute">
+		<parent link="r_grasp_link"/>
 		<child link="r_gripper"/>
 		<origin rpy="0 0 0" xyz="0.025 0 0"/>
 		<axis xyz="1.0 0 0"/>

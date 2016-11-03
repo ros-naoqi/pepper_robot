@@ -48,6 +48,9 @@
         <plugin name="${side_small}_gripper" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
             <link>${side_small}_gripper</link>
         </plugin>
+        <plugin name="${side_small}_grasp_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+            <link>${side_small}_grasp_link</link>
+        </plugin>
     </xacro:macro> 
     <!-- MACROS FOR MIMIC JOINTS -->
     <!-- Fingers -->
@@ -179,6 +182,12 @@
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
+    <gazebo reference="l_grasp_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
     <gazebo reference="l_gripper">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
@@ -211,6 +220,12 @@
         <turnGravityOff>false</turnGravityOff>
     </gazebo> 
     <gazebo reference="r_wrist">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <gazebo reference="r_grasp_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>

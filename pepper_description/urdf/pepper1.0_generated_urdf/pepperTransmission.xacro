@@ -87,6 +87,16 @@
 				<mechanicalReduction>${speed_red_type2A}</mechanicalReduction>
 			</actuator>
 		</transmission>
+		<transmission name="${side}Grasp_Transmission">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="${side}Grasp">
+				<hardwareInterface>PositionJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="${side}Grasp_Motor">
+				<hardwareInterface>PositionJointInterface</hardwareInterface>
+				<mechanicalReduction>${speed_red_type3B}</mechanicalReduction>
+			</actuator>
+		</transmission>
 		<transmission name="${side}Hand_Transmission">
 			<type>transmission_interface/SimpleTransmission</type>
 			<joint name="${side}Hand">
