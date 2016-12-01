@@ -684,20 +684,36 @@
 </gazebo> 
 -->
 <!-- Drive controller -->
+<!-- <gazebo> -->
+<!--   <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so"> -->
+<!--     <alwaysOn>true</alwaysOn> -->
+<!--     <updateRate>100</updateRate> -->
+<!--     <robotNamespace>/</robotNamespace> -->
+<!--     <leftJoint>WheelFL</leftJoint> -->
+<!--     <rightJoint>WheelFR</rightJoint> -->
+<!--     <wheelSeparation>0.170</wheelSeparation> -->
+<!--     <wheelDiameter>0.140</wheelDiameter> -->
+<!--     <torque>36.9</torque> -->
+<!--     <commandTopic>cmd_vel</commandTopic> -->
+<!--     <odometryTopic>odom_diffdrive</odometryTopic> -->
+<!--     <odometryFrame>odom</odometryFrame> -->
+<!--     <robotBaseFrame>base_footprint</robotBaseFrame> -->
+<!--   </plugin> -->
+<!-- </gazebo> -->
+
+<!-- Planar move plugin -->
 <gazebo>
-  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
-    <alwaysOn>true</alwaysOn>
-    <updateRate>100</updateRate>
-    <robotNamespace>/</robotNamespace>
-    <leftJoint>WheelFL</leftJoint>
-    <rightJoint>WheelFR</rightJoint>
-    <wheelSeparation>0.170</wheelSeparation>
-    <wheelDiameter>0.140</wheelDiameter>
-    <torque>36.9</torque>
+  <plugin name="object_controller"
+	  filename="libgazebo_ros_planar_move.so">
     <commandTopic>cmd_vel</commandTopic>
-    <odometryTopic>odom_diffdrive</odometryTopic>
+    <odometryTopic>odom</odometryTopic>
     <odometryFrame>odom</odometryFrame>
+    <odometryRate>20</odometryRate>
     <robotBaseFrame>base_footprint</robotBaseFrame>
+    <recover_roll_velocity_p_gain>1</recover_roll_velocity_p_gain>
+    <recover_pitch_velocity_p_gain>1</recover_pitch_velocity_p_gain>
+    <recover_z_velocity_p_gain>1</recover_z_velocity_p_gain>
+    <joint_state_idel_sec>3.0</joint_state_idel_sec>
   </plugin>
 </gazebo>
 </robot>

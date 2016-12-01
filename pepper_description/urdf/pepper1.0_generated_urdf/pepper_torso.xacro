@@ -18,4 +18,26 @@
 		</inertial>
 		<xacro:insert_visu_torso/>
 	</link>
+	 <link name="base_footprint2">
+           <visual>
+             <geometry>
+               <box size="0.01 0.01 0.01" />
+             </geometry>
+           </visual>
+           <collision>
+             <geometry>
+               <box size="1.2 1.2 0.01" />
+             </geometry>
+           </collision>
+           <inertial>
+             <mass value="1"/>
+             <inertia ixx="0.0452761" ixy="0" ixz="0.00499091" iyy="0.0432702" iyz="-0.000266886" izz="0.0258881"/>
+           </inertial>
+	 </link>
+	 <joint name="base_footprint_fixedjoint" type="fixed">
+           <parent link="base_link"/>
+           <child link="base_footprint2"/>
+	   <origin rpy="0 0 0" xyz="0 0 -0.8"/>
+           <axis xyz="0 0 0"/>
+	 </joint>
 </robot>
