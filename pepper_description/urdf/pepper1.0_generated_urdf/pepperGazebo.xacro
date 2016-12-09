@@ -709,7 +709,7 @@
     <odometryTopic>odom</odometryTopic>
     <odometryFrame>odom</odometryFrame>
     <odometryRate>20</odometryRate>
-    <robotBaseFrame>base_footprint</robotBaseFrame>
+    <robotBaseFrame>base_footprint2</robotBaseFrame>
     <recover_roll_velocity_p_gain>1</recover_roll_velocity_p_gain>
     <recover_pitch_velocity_p_gain>1</recover_pitch_velocity_p_gain>
     <recover_z_velocity_p_gain>1</recover_z_velocity_p_gain>
