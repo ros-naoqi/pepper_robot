@@ -1,4 +1,4 @@
 <launch>
   <arg name="version" default="1.0" />
-  <param name="robot_description" command="$(find xacro)/xacro.py $(find pepper_description)/urdf/pepper$(arg version)_generated_urdf/pepper_robot.xacro" />
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find pepper_description)/urdf/pepper$(arg version)_generated_urdf/pepper_robot.xacro" />
 </launch>
