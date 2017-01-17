@@ -2,6 +2,11 @@
 Changelog for package pepper_sensors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* correct old emailaddress in package.xml
+* Contributors: Karsten Knese
+
 0.1.8 (2015-12-18)
 ------------------
 

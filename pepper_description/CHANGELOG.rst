@@ -2,6 +2,21 @@
 Changelog for package pepper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* correct old emailaddress in package.xml
+* remove code duplication
+* fix deprecated xacro call
+* cleaning pepperGazebo.xacro
+* fixing bugs in wheels
+* adding sensors to Gazebo
+* fixing wheels
+* cleaning pepperGazebo.xacro and adding pepperTransmission.xacro
+* re-generating the latest Pepper URDF
+* adding pepperGazebo.xacro
+* urdf.rviz, add laser, range, camera, depth sensors
+* Contributors: Karsten Knese, Kei Okada, Mikael Arguedas, Natalia Lyubova, nlyubova
+
 0.1.8 (2015-12-18)
 ------------------
 
