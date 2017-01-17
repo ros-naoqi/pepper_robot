@@ -2,8 +2,8 @@
 Changelog for package pepper_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.9 (2017-01-17)
+------------------
 * correct old emailaddress in package.xml
 * [pepper_bringup] add perception.launch.xml
 * add naoqi_pose/launch/pose_manager.launch + ns pepper_robot

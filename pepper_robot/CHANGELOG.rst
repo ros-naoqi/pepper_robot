@@ -2,8 +2,8 @@
 Changelog for package pepper_robot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.9 (2017-01-17)
+------------------
 * correct old emailaddress in package.xml
 * Contributors: Karsten Knese
 
