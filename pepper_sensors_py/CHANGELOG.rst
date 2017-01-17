@@ -2,8 +2,8 @@
 Changelog for package pepper_sensors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.10 (2017-01-17)
+-------------------
 * Merge pull request `#34 <https://github.com/ros-naoqi/pepper_robot/issues/34>`_ from ros-naoqi/change_maintainer
   change maintainership
 * change maintainership
