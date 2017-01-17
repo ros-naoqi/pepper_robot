@@ -4,6 +4,7 @@
   <version>0.1.8</version>
   <description>The pepper_robot package</description>
 
+  <author>Karsten Knese</author>
   <maintainer email="karsten.knese@gmail.com">Karsten Knese</maintainer>
 
   <license>Apache 2.0</license>
