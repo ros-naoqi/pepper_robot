@@ -1,5 +1,7 @@
 <launch>
   <arg name="version" default="1.0" />
-  <param name="robot_description" command="$(find xacro)/xacro.py $(find pepper_description)/urdf/pepper$(arg version)_generated_urdf/pepper_robot.xacro" />
+  <include file="$(find pepper_description)/launch/pepper_upload.launch">
+    <arg name="version" value="$(arg version)"/>
+  </include>
   <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher" />
 </launch>
