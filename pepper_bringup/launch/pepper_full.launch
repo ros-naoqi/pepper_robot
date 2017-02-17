@@ -6,7 +6,7 @@
   <arg name="roscore_ip"          default="127.0.0.1" />
   <arg name="network_interface"   default="eth0" />
 
-  <arg name="namespace"           default="$(optenv ROS_NAMESPACE pepper_robot)" />
+  <arg name="namespace"           default="pepper_robot" />
 
   <!-- naoqi driver -->
   <include file="$(find naoqi_driver)/launch/naoqi_driver.launch" >
