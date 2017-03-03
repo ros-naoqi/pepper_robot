@@ -677,7 +677,7 @@
       <radiation>ultrasound</radiation>
     </plugin>
   </sensor>
-</gazebo> 
+</gazebo>
 
 <gazebo reference="SonarFront_frame">
   <sensor type="ray" name="SonarFront">
@@ -718,7 +718,7 @@
       <radiation>ultrasound</radiation>
     </plugin>
   </sensor>
-</gazebo> 
+</gazebo>
 
 <!-- Drive controller -->
 <gazebo>
