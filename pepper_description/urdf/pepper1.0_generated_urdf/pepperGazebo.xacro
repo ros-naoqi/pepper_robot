@@ -637,7 +637,7 @@
 <!--
     Sonars
 -->
-<!--
+
 <gazebo reference="SonarBack_frame">
   <sensor type="ray" name="SonarBack">
     <pose>0 0 0 0 0 0</pose>
@@ -647,21 +647,21 @@
       <scan>
         <horizontal>
           <samples>5</samples>
-          <resolution>1</resolution>
-          <min_angle>-0.2617993877991494</min_angle>
-          <max_angle>0.2617993877991494</max_angle> 
+          <resolution>3</resolution>
+          <min_angle>-0.52</min_angle>
+          <max_angle>0.52</max_angle>
         </horizontal>
         <vertical>
           <samples>5</samples>
-          <resolution>1</resolution>
-          <min_angle>-0.13</min_angle>
-          <max_angle>0.13</max_angle> 
+          <resolution>3</resolution>
+          <min_angle>-0.52</min_angle>
+          <max_angle>0.52</max_angle>
         </vertical>
       </scan>
       <range>
-        <min>0.025</min>
-        <max>2.55</max>
-        <resolution>1</resolution>
+        <min>0.0</min>
+        <max>5.0</max>
+        <resolution>3</resolution>
       </range>
     </ray>
     <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
@@ -671,9 +671,9 @@
       <updateRate>20</updateRate>
       <topicName>sonar_back</topicName>
       <frameName>SonarBack_frame</frameName>
-      <minRange>0.025</minRange>
-      <maxRange>2.55</maxRange>
-      <fov>0.5235987755982988</fov> 
+      <minRange>0.0</minRange>
+      <maxRange>5.0</maxRange>
+      <fov>1.05</fov>
       <radiation>ultrasound</radiation>
     </plugin>
   </sensor>
@@ -688,21 +688,21 @@
       <scan>
         <horizontal>
           <samples>5</samples>
-          <resolution>1</resolution>
-          <min_angle>-0.2617993877991494</min_angle>
-          <max_angle>0.2617993877991494</max_angle> 
+          <resolution>3</resolution>
+          <min_angle>-0.52</min_angle>
+          <max_angle>0.52</max_angle>
         </horizontal>
         <vertical>
           <samples>5</samples>
-          <resolution>1</resolution>
-          <min_angle>-0.13</min_angle>
-          <max_angle>0.13</max_angle>
+          <resolution>3</resolution>
+          <min_angle>-0.52</min_angle>
+          <max_angle>0.52</max_angle>
         </vertical>
       </scan>
       <range>
-        <min>0.025</min>
-        <max>2.55</max> 
-        <resolution>1</resolution>
+        <min>0.0</min>
+        <max>5.0</max>
+        <resolution>3</resolution>
       </range>
     </ray>
     <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
@@ -712,14 +712,14 @@
       <updateRate>20</updateRate>
       <topicName>sonar_front</topicName>
       <frameName>SonarFront_frame</frameName>
-      <minRange>0.025</minRange>
-      <maxRange>2.55</maxRange>
-      <fov>0.5235987755982988</fov>
+      <minRange>0.0</minRange>
+      <maxRange>5.0</maxRange>
+      <fov>1.05</fov>
       <radiation>ultrasound</radiation>
     </plugin>
   </sensor>
 </gazebo> 
--->
+
 <!-- Drive controller -->
 <gazebo>
   <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
