@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>pepper_gazebo</name>
+  <version>0.0.0</version>
+  <description>The pepper_gazebo package</description>
+
+  <license>Apache 2.0</license>
+  <maintainer email="iiysaito@opensource-robotics.tokyo.jp">Isaac IY Saito</maintainer>
+  <author email="iiysaito@opensource-robotics.tokyo.jp">Isaac IY Saito</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>gazebo_ros</build_depend>
+  <build_depend>gazebo_ros_control</build_depend>
+  <build_depend>pepper_description</build_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>gazebo_ros_control</run_depend>
+  <run_depend>pepper_description</run_depend>
+
+  <export />
+</package>
