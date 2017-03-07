@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package>
+  <name>pepper_apps</name>
+  <version>0.1.0</version>
+  <description>Applications for Pepper using the NAOqi API</description>
+
+  <maintainer email="vincent.rabaud@gmail.com">Vincent Rabaud</maintainer>
+  <maintainer email="yoneken@ieee.org">Kenta Yonekura</maintainer>
+
+  <author email="vincent.rabaud@gmail.com">Vincent Rabaud</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>
