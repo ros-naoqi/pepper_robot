@@ -6,14 +6,15 @@
   <arg name="roscore_ip"          default="127.0.0.1" />
   <arg name="network_interface"   default="eth0" />
 
-  <arg name="namespace"           default="pepper_robot" />
+  <arg name="namespace"           default="$(optenv ROS_NAMESPACE pepper_robot)" />
 
   <!-- naoqi driver -->
-  <include file="$(find naoqi_driver)/launch/naoqi_driver.launch"  ns="$(arg namespace)" >
+  <include file="$(find naoqi_driver)/launch/naoqi_driver.launch">
     <arg name="nao_ip"            value="$(arg nao_ip)" />
     <arg name="nao_port"          value="$(arg nao_port)" />
     <arg name="roscore_ip"        value="$(arg roscore_ip)" />
     <arg name="network_interface" value="$(arg network_interface)" />
+    <arg name="namespace"         value="$(arg namespace)" />
   </include>
 
   <!-- launch pose manager -->
