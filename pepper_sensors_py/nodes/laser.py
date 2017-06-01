@@ -163,12 +163,17 @@ class NaoqiLaser(NaoqiNode):
     def fetchLaserValues(self, keyPrefix, scanNum):
         ranges = []
         # traverse backwards
-        for i in xrange(scanNum,0,-1):
-            keyX = keyPrefix+'Seg'+'%02d'%(i,)+'/X/Sensor/Value'
-            keyY = keyPrefix+'Seg'+'%02d'%(i,)+'/Y/Sensor/Value'
-            x = self.memProxy.getData(keyX)
-            y = self.memProxy.getData(keyY)
-            ranges.append(math.sqrt(math.pow(x,2)+math.pow(y,2)))
+        tmp_array = []
+        for i in xrange(scanNum, 0, -1):
+            keyX = keyPrefix + 'Seg' + '%02d' % (i,) + '/X/Sensor/Value'
+            keyY = keyPrefix + 'Seg' + '%02d' % (i,) + '/Y/Sensor/Value'
+            tmp_array.append(keyX)
+            tmp_array.append(keyY)
+        memData = self.memProxy.getListData(tmp_array)
+        for i in xrange(0, len(tmp_array), 2):
+            x = memData[i]
+            y = memData[i+1]
+            ranges.append(math.sqrt(math.pow(x, 2.0) + math.pow(y, 2.0)))
         return ranges
 
     def fetchPCValues(self, keyPrefix, scanNum):
