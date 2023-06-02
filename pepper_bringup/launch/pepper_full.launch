@@ -7,6 +7,8 @@
   <arg name="network_interface"   default="eth0" />
 
   <arg name="namespace"           default="$(optenv ROS_NAMESPACE pepper_robot)" />
+  <arg name="user"                default="" />
+  <arg name="password"            default="" />
 
   <!-- naoqi driver -->
   <include file="$(find naoqi_driver)/launch/naoqi_driver.launch">
@@ -15,6 +17,8 @@
     <arg name="roscore_ip"        value="$(arg roscore_ip)" />
     <arg name="network_interface" value="$(arg network_interface)" />
     <arg name="namespace"         value="$(arg namespace)" />
+    <arg name="user"              value="$(arg username)" />
+    <arg name="password"          value="$(arg password)" /> 
   </include>
 
   <!-- launch pose manager -->
