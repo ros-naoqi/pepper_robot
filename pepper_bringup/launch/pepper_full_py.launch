@@ -3,6 +3,7 @@
   <arg name="nao_ip"            default="$(optenv NAO_IP 127.0.0.1)" />
   <arg name="nao_port"          default="$(optenv NAO_PORT 9559)" />
   <arg name="namespace"           default="pepper_robot" />
+  <arg name="use_odometry" default="true" />
 
   <!-- Use CPP node by default for nao_sensors -->
   <arg name="force_python" default="true" />
@@ -11,6 +12,7 @@
   <!-- nao driver works for pepper -->
   <include file="$(find naoqi_driver_py)/launch/naoqi_driver.launch">
     <arg name="nao_ip"    value="$(arg nao_ip)" />
+    <arg name="use_odometry" value="$(arg use_odometry)" />
   </include>
 
   <include file="$(find pepper_sensors_py)/launch/sonar.launch" >
