@@ -299,8 +299,20 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <joint name="LHand" type="revolute">
+  <joint name="LGrasp" type="revolute">
     <parent link="l_wrist"/>
+    <child link="l_grasp_link"/>
+    <origin rpy="0 0 0" xyz="0.065 0 0"/>
+    <limit effort="0.0" lower="0.0" upper="0.0" velocity="0.0"/>
+  </joint>
+  <link name="l_grasp_link">
+    <inertial>
+      <mass value="2e-06"/>
+      <inertia ixx="1.1e-09" ixy="0" ixz="0" iyy="1.1e-09" iyz="0" izz="1.1e-09"/>
+    </inertial>
+  </link>
+  <joint name="LHand" type="revolute">
+    <parent link="l_grasp_link"/>
     <child link="l_gripper"/>
     <origin rpy="0 0 0" xyz="0.025 0 0"/>
     <axis xyz="1.0 0 0"/>
@@ -442,8 +454,20 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <joint name="RHand" type="revolute">
+  <joint name="RGrasp" type="revolute">
     <parent link="r_wrist"/>
+    <child link="r_grasp_link"/>
+    <origin rpy="0.0 0 0" xyz="0.065 0 0"/>
+    <limit effort="0.0" lower="0.0" upper="0.0" velocity="0.0"/>
+  </joint>
+  <link name="r_grasp_link">
+    <inertial>
+      <mass value="2e-06"/>
+      <inertia ixx="1.1e-09" ixy="0" ixz="0" iyy="1.1e-09" iyz="0" izz="1.1e-09"/>
+    </inertial>
+  </link>
+  <joint name="RHand" type="revolute">
+    <parent link="r_grasp_link"/>
     <child link="r_gripper"/>
     <origin rpy="0 0 0" xyz="0.025 0 0"/>
     <axis xyz="1.0 0 0"/>
@@ -1677,6 +1701,9 @@
     <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="l_gripper">
       <link>l_gripper</link>
     </plugin>
+    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="l_grasp_link">
+      <link>l_grasp_link</link>
+    </plugin>
     <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="RFinger11_link">
       <link>RFinger11_link</link>
     </plugin>
@@ -1721,6 +1748,9 @@
     </plugin>
     <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="r_gripper">
       <link>r_gripper</link>
+    </plugin>
+    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="r_grasp_link">
+      <link>r_grasp_link</link>
     </plugin>
   </gazebo>
   <!-- END OF GAZEBO ROS CONTROL PLUGIN -->
@@ -1786,6 +1816,12 @@
     <selfCollide>false</selfCollide>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="l_grasp_link">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <selfCollide>false</selfCollide>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
   <gazebo reference="l_gripper">
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
@@ -1817,6 +1853,12 @@
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
   <gazebo reference="r_wrist">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <selfCollide>false</selfCollide>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+  <gazebo reference="r_grasp_link">
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
     <selfCollide>false</selfCollide>
@@ -2403,6 +2445,16 @@
       <mechanicalReduction>118.1</mechanicalReduction>
     </actuator>
   </transmission>
+  <transmission name="LGrasp_Transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LGrasp">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="LGrasp_Motor">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>36.24</mechanicalReduction>
+    </actuator>
+  </transmission>
   <transmission name="LHand_Transmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LHand">
@@ -2461,6 +2513,16 @@
     <actuator name="RWristYaw_Motor">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
       <mechanicalReduction>118.1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="RGrasp_Transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RGrasp">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="RGrasp_Motor">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>36.24</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="RHand_Transmission">
